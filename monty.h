@@ -58,8 +58,8 @@ extern bus_t bus;
 
 /* functions prototypes */
 
-void _div(stack_t **head, unsigned int counter)
-
+void _div(stack_t **head, unsigned int counter);
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 
 
 #endif
