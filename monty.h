@@ -1,5 +1,6 @@
 #ifndef monty_h
 #define monty_h
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,7 +56,6 @@ typedef struct bus_s
 	int lifi;
 }  bus_t;
 extern bus_t bus;
-bus_t bus = {NULL, NULL, NULL, 0};
 
 /* functions prototypes */
 
