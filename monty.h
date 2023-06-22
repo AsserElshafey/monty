@@ -72,6 +72,6 @@ void _pop(stack_t **head, unsigned int counter);
 void _push(stack_t **head, unsigned int counter);
 void _add(stack_t **head, unsigned int counter);
 void addnode(stack_t **head, int n);
-
+void _sub(stack_t **head, unsigned int counter);
 
 #endif
