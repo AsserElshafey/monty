@@ -76,6 +76,7 @@ void _sub(stack_t **head, unsigned int counter);
 void _swap(stack_t **head, unsigned int counter);
 void addqueue(stack_t **head, int n);
 void _queue(stack_t **head, unsigned int counter);
+void _rotl(stack_t **head,  __attribute__((unused)) unsigned int counter);
 
 
 
