@@ -70,6 +70,7 @@ void print_str(stack_t **head, unsigned int counter);
 void _pint(stack_t **head, unsigned int counter);
 void _pop(stack_t **head, unsigned int counter);
 void _push(stack_t **head, unsigned int counter);
+void _add(stack_t **head, unsigned int counter);
 
 
 #endif
