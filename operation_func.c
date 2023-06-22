@@ -31,7 +31,7 @@ void _mul(stack_t **head, unsigned int counter)
 	free(h);
 }
 
-#include "monty.h"
+
 /**
  * _add - adds the top two elements of the stack.
  * @head: stack head
@@ -62,4 +62,28 @@ void _add(stack_t **head, unsigned int counter)
 	h->next->n = x;
 	*head = h->next;
 	free(h);
+}
+
+/**
+ * addnode - add node to the head stack
+ * @head: head of the stack
+ * @n: new_value
+ * Return: no return
+*/
+void addnode(stack_t **head, int n)
+{
+
+	stack_t *new_node, *x;
+
+	x = *head;
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+	{ printf("Error\n");
+		exit(0); }
+	if (x)
+		x->prev = new_node;
+	new_node->n = n;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	*head = new_node;
 }
