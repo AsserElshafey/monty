@@ -8,7 +8,7 @@
 void _div(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
-	int len = 0, aux;
+	int len = 0, x;
 
 	h = *head;
 	while (h)
@@ -33,8 +33,8 @@ void _div(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n / h->n;
-	h->next->n = aux;
+	x = h->next->n / h->n;
+	h->next->n = x;
 	*head = h->next;
 	free(h);
 }
@@ -50,21 +50,21 @@ void _div(stack_t **head, unsigned int counter)
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-				{"pop", f_pop},
-				{"swap", f_swap},
-				{"add", f_add},
-				{"nop", f_nop},
-				{"sub", f_sub},
-				{"div", f_div},
-				{"mul", f_mul},
-				{"mod", f_mod},
-				{"pchar", f_pchar},
-				{"pstr", f_pstr},
-				{"rotl", f_rotl},
-				{"rotr", f_rotr},
-				{"queue", f_queue},
-				{"stack", f_stack},
+				{"push", _push}, {"pall", print_all}, {"pint", _pint},
+				{"pop", _pop},
+				{"swap", _swap},
+				{"add", _add},
+				{"nop", _nop},
+				{"sub", _sub},
+				{"div", _div},
+				{"mul", _mul},
+				{"mod", _mod},
+				{"pchar", print_char},
+				{"pstr", print_str},
+				{"rotl", _rotl},
+				{"rotr", _rotr},
+				{"queue", _queue},
+				{"stack", _stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -130,4 +130,37 @@ void _mod(stack_t **head, unsigned int counter)
 	h->next->n = x;
 	*head = h->next;
 	free(h);
+}
+
+/**
+  *_nop- nothing
+  *@head: stack head
+  *@counter: line_number
+  *Return: no return
+ */
+void _nop(stack_t **head, unsigned int counter)
+{
+	(void) counter;
+	(void) head;
+}
+
+/**
+ * print_all - prints the stack
+ * @head: stack head
+ * @counter: no used
+ * Return: no return
+*/
+void print_all(stack_t **head, unsigned int counter)
+{
+	stack_t *h;
+	(void)counter;
+
+	h = *head;
+	if (h == NULL)
+		return;
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+	}
 }
