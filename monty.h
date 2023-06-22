@@ -67,5 +67,6 @@ void _nop(stack_t **head, unsigned int counter);
 void print_all(stack_t **head, unsigned int counter);
 void print_char(stack_t **head, unsigned int counter);
 void print_str(stack_t **head, unsigned int counter);
+void _pint(stack_t **head, unsigned int counter);
 
 #endif

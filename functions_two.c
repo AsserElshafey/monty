@@ -31,7 +31,7 @@ void print_char(stack_t **head, unsigned int counter)
 	printf("%c\n", h->n);
 }
 
-#include "monty.h"
+
 /**
  * print_str - prints the string starting at the top of the stack,
  * followed by a new
@@ -55,4 +55,23 @@ void print_str(stack_t **head, unsigned int counter)
 		h = h->next;
 	}
 	printf("\n");
+}
+
+/**
+ * _pint - prints the top
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void _pint(stack_t **head, unsigned int counter)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*head)->n);
 }
