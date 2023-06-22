@@ -74,6 +74,9 @@ void _add(stack_t **head, unsigned int counter);
 void addnode(stack_t **head, int n);
 void _sub(stack_t **head, unsigned int counter);
 void _swap(stack_t **head, unsigned int counter);
+void addqueue(stack_t **head, int n);
+void _queue(stack_t **head, unsigned int counter);
+
 
 
 #endif
